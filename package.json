@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^3.0.4"
+  },
+  "dependencies": {
+    "element-ui": "^2.4.9",
+    "vue": "^2.5.17"
   }
 }

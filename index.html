@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/element/index.css">
+    <script src="lib/vue.js"></script>
+    <script defer src="lib/element/index.js"></script>
+    <script defer src="page.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>hello electron</h1>
+    <div id="app">
+        <el-container>
+            <el-header>electron test</el-header>
+            <el-main>
+                <el-card class="box-card">
+                    <div slot="header" class="clearfix">
+                        <span>host</span>
+                        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                    </div>
+                    <el-row :gutter="20">
+                        <el-col :span="22">
+                            <el-input v-for="rule in validRuleArr" v-model="rule" placeholder="请输入内容"></el-input>
+                        </el-col>
+                        <el-col :span="2">
+                                <el-switch
+                                    v-model="test"
+                                    active-color="#13ce66"
+                                    inactive-color="#ff4949">
+                                </el-switch>
+                        </el-col>
+                    </el-row>
+                </el-card>
+            </el-main>
+            <el-footer></el-footer>
+        </el-container>
+    </div>
 </body>
 </html>
