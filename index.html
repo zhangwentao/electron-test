@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="lib/element/index.css">
+    <link rel="stylesheet" href="index.css">
     <script src="lib/vue.js"></script>
     <script defer src="lib/element/index.js"></script>
     <script defer src="page.js"></script>
-    <title>Document</title>
+    <title>host switcher</title>
 </head>
 <body>
     <div id="app">
         <el-container>
-            <el-header>electron test</el-header>
             <el-main>
                 <el-card class="box-card">
                     <div slot="header" class="clearfix">
                         <span>host</span>
-                        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                        <el-button
+                            style="float: right; padding: 3px 0" 
+                            type="text"
+                            @click="handleClick"
+                        >源文件</el-button>
                     </div>
-                    <el-row :gutter="20">
-                        <el-col :span="22">
-                            <el-input v-for="rule in validRuleArr" v-model="rule" placeholder="请输入内容"></el-input>
+                    <el-row :gutter="20" v-for="rule in lineObjArr" class="host-rule">
+                        <el-col :span="11">
+                            <el-input v-model="rule.host" placeholder="请输入内容"></el-input>
                         </el-col>
-                        <el-col :span="2">
-                                <el-switch
-                                    v-model="test"
-                                    active-color="#13ce66"
-                                    inactive-color="#ff4949">
-                                </el-switch>
+                        <el-col :span="10">
+                            <el-input v-model="rule.ip" placeholder="请输入内容"></el-input>
+                        </el-col>
+                        <el-col :span="1">
+                            <el-switch
+                                class="host-switcher"
+                                v-model="rule.valid"
+                                active-color="#13ce66"
+                                inactive-color="gray">
+                            </el-switch>
                         </el-col>
                     </el-row>
                 </el-card>
+                <el-row class="btn-container">
+                    <el-button
+                        type="success"
+                        @click="save"
+                    >保存</el-button>
+                  </el-row>
             </el-main>
             <el-footer></el-footer>
         </el-container>

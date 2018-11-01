@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^3.0.4"
+    "electron": "^3.0.4",
+    "vue-devtools": "^5.0.0-beta.1"
   },
   "dependencies": {
     "element-ui": "^2.4.9",

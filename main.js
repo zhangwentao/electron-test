@@ -7,11 +7,10 @@ app.on('ready', () => {
 });
 */
 app.whenReady().then(()=>{
+    require('vue-devtools').install();
     win = new BrowserWindow();
     win.loadFile('index.html');
 });
 app.on('window-all-closed', () => {
-    debugger;
     app.quit();
-})
-
+});

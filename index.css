@@ -1,4 +1,12 @@
-h1 {
-    color: #fff;
-    background: blue;
+.host-rule {
+    margin-bottom: 10px;
+}
+
+.host-switcher {
+    margin-top: 10px;
+}
+
+.btn-container {
+    margin-top: 20px;
+    text-align: center;
 }
